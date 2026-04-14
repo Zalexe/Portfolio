@@ -29,5 +29,15 @@
     "@angular/compiler-cli": "^20.0.0",
     "@types/node": "^20.0.0",
     "typescript": "~5.9.2"
-  }
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "github-build": "ng build --configuration production --base-href 'https://zalexe.github.io/Portfolio/'"
+  },
 }
