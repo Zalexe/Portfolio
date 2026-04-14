@@ -1,0 +1,80 @@
+<!-- This is the main template for the AppComponent -->
+<main>
+  <section id="home" class="hero">
+    <h1>Hello! I'm {{ name }}</h1>
+    <p>I'm a Frontend Developer with one year of experience and two years in SCADA systems (AVEVA).</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/carlos-marruedo/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Zalexe" target="_blank">GitHub</a>
+      <a href="mailto:carlosmarruedo@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <section id="stack" class="tech-stack">
+    <h2>TECH STACK</h2>
+    <div class="stack-category">
+      <h3>LANGUAGES</h3>
+      <ul>
+        <li *ngFor="let lang of languages">{{ lang }}</li>
+      </ul>
+    </div>
+    <div class="stack-category">
+      <h3>FRAMEWORKS</h3>
+      <ul>
+        <li *ngFor="let fw of frameworks">{{ fw }}</li>
+      </ul>
+    </div>
+    <div class="stack-category">
+      <h3>DATABASES</h3>
+      <ul>
+        <li *ngFor="let db of databases">{{ db }}</li>
+      </ul>
+    </div>
+    <div class="stack-category">
+      <h3>TOOLS</h3>
+      <ul>
+        <li *ngFor="let tool of tools">{{ tool }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>EXPERIENCE</h2>
+    <div class="job" *ngFor="let exp of experiences">
+      <h3>{{ exp.title }} — {{ exp.company }}</h3>
+      <p>{{ exp.period }}</p>
+      <h4>KEY ACHIEVEMENTS</h4>
+      <ul>
+        <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+      </ul>
+      <h4>KEY RESPONSIBILITIES</h4>
+      <ul>
+        <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>PROJECTS</h2>
+    <div class="project" *ngFor="let project of projects">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+      <ul>
+        <li *ngFor="let tech of project.technologies">{{ tech }}</li>
+      </ul>
+      <div>
+        <a *ngFor="let link of project.links" [href]="link.url" target="_blank">{{ link.text }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="connect">
+    <h2>CONNECT</h2>
+    <p>Let's build something remarkable together.</p>
+    <div class="contact-links">
+      <a href="mailto:{{ email }}">EMAIL {{ email }}</a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LINKEDIN Your Name</a>
+      <a href="https://x.com/yourhandle" target="_blank">TWITTER @yourhandle</a>
+    </div>
+  </section>
+</main>
