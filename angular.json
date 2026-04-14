@@ -46,7 +46,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "cv-angular:build"
+            "outputPath": "dist/Portfolio",
+            "baseHref": "/Portfolio/"
           }
         }
       }
