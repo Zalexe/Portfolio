@@ -24,7 +24,7 @@ export class AppComponent {
   experiences = [
     {
       title: 'Technical Analyst',
-      company: 'Mindden/Aquatec',
+      company: 'MindDen/Aquatec',
       period: 'Jul. 2022 — May. 2024',
       achievements: [
         'Developed SCADA projects with System Platform (AVEVA) for Aguas de Barcelona',
@@ -60,7 +60,8 @@ export class AppComponent {
     {
       name: 'Park4dis Mobile',
       description: 'Mobile application using Java, REST, and Cordova, optimizing performance and user experience with real-time notifications, geolocation, and customization options.',
-      technologies: ['Java', 'REST', 'Cordova', 'JQuery', 'PHP', 'SQL']
+      technologies: ['Java', 'REST', 'Cordova', 'JQuery', 'PHP', 'SQL'],
+      links: []
     },
     {
       name: 'Minishell',

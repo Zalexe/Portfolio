@@ -1,79 +1,154 @@
-<!-- This is the main template for the AppComponent -->
-<main>
-  <section id="home" class="hero">
-    <h1>Hello! I'm {{ name }}</h1>
-    <p>I'm a Frontend Developer with one year of experience and two years in SCADA systems (AVEVA).</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/carlos-marruedo/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Zalexe" target="_blank">GitHub</a>
-      <a href="mailto:carlosmarruedo@gmail.com">Email</a>
-    </div>
-  </section>
-
-  <section id="stack" class="tech-stack">
-    <h2>TECH STACK</h2>
-    <div class="stack-category">
-      <h3>LANGUAGES</h3>
-      <ul>
-        <li *ngFor="let lang of languages">{{ lang }}</li>
-      </ul>
-    </div>
-    <div class="stack-category">
-      <h3>FRAMEWORKS</h3>
-      <ul>
-        <li *ngFor="let fw of frameworks">{{ fw }}</li>
-      </ul>
-    </div>
-    <div class="stack-category">
-      <h3>DATABASES</h3>
-      <ul>
-        <li *ngFor="let db of databases">{{ db }}</li>
-      </ul>
-    </div>
-    <div class="stack-category">
-      <h3>TOOLS</h3>
-      <ul>
-        <li *ngFor="let tool of tools">{{ tool }}</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="experience" class="experience">
-    <h2>EXPERIENCE</h2>
-    <div class="job" *ngFor="let exp of experiences">
-      <h3>{{ exp.title }} — {{ exp.company }}</h3>
-      <p>{{ exp.period }}</p>
-      <h4>KEY ACHIEVEMENTS</h4>
-      <ul>
-        <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
-      </ul>
-      <h4>KEY RESPONSIBILITIES</h4>
-      <ul>
-        <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>PROJECTS</h2>
-    <div class="project" *ngFor="let project of projects">
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description }}</p>
-      <ul>
-        <li *ngFor="let tech of project.technologies">{{ tech }}</li>
-      </ul>
+<!-- Main layout for the modern portfolio experience -->
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">CM</span>
       <div>
-        <a *ngFor="let link of project.links" [href]="link.url" target="_blank">{{ link.text }}</a>
+        <p class="brand-title">Carlos Marruedo</p>
+        <p class="brand-subtitle">Frontend Developer</p>
       </div>
     </div>
+
+    <nav class="page-nav">
+      <a href="#home">Home</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Portfolio Refresh</span>
+      <h1>Hi, I'm {{ name }}</h1>
+      <p class="hero-description">I build modern web interfaces and industrial automation experiences using Angular, React, and SCADA systems.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:{{ email }}">Email Me</a>
+        <a class="button secondary" href="https://github.com/Zalexe" target="_blank">View GitHub</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <strong>1+</strong>
+          <span>Year in Frontend</span>
+        </div>
+        <div>
+          <strong>2+</strong>
+          <span>Years in SCADA</span>
+        </div>
+        <div>
+          <strong>42</strong>
+          <span>Improving in school 42</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-panel">
+      <div class="panel-card">
+        <p class="panel-label">About me</p>
+        <h2>{{ jobTitle }}</h2>
+        <p>Creative frontend engineer with a strong automation background. I combine user-centered interfaces with reliable industrial systems.</p>
+        <div class="panel-list">
+          <div>
+            <strong>Primary</strong>
+            <span>Angular, React, JavaScript</span>
+          </div>
+          <div>
+            <strong>Tools</strong>
+            <span>Git, Docker, AVEVA, Ignition</span>
+          </div>
+        </div>
+      </div>
+    </aside>
   </section>
 
-  <section id="contact" class="connect">
-    <h2>CONNECT</h2>
-    <p>Let's build something remarkable together.</p>
-    <div class="contact-links">
-      <a href="mailto:{{ email }}">{{ email }}</a>
-      <a href="https://www.linkedin.com/in/carlos-marruedo/" target="_blank">LINKEDIN</a>
+  <section id="stack" class="section">
+    <div class="section-header">
+      <span>01</span>
+      <h2>Tech Stack</h2>
+    </div>
+
+    <div class="grid cards stack-grid">
+      <article class="card">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag" *ngFor="let lang of languages">{{ lang }}</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Frameworks</h3>
+        <div class="tags">
+          <span class="tag" *ngFor="let fw of frameworks">{{ fw }}</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Databases</h3>
+        <div class="tags">
+          <span class="tag" *ngFor="let db of databases">{{ db }}</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Tools</h3>
+        <div class="tags">
+          <span class="tag" *ngFor="let tool of tools">{{ tool }}</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-header">
+      <span>02</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="grid cards experience-grid">
+      <article class="job-card" *ngFor="let exp of experiences">
+        <div class="job-heading">
+          <h3>{{ exp.title }}</h3>
+          <p>{{ exp.company }}</p>
+        </div>
+        <p class="job-period">{{ exp.period }}</p>
+        <div class="label-row">KEY ACHIEVEMENTS</div>
+        <ul>
+          <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+        </ul>
+        <div class="label-row">KEY RESPONSIBILITIES</div>
+        <ul>
+          <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="grid cards project-grid">
+      <article class="project-card" *ngFor="let project of projects">
+        <div class="project-header">
+          <h3>{{ project.name }}</h3>
+        </div>
+        <p>{{ project.description }}</p>
+        <div class="tags">
+          <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+        <div class="project-links" *ngIf="project.links?.length">
+          <a class="link-button" *ngFor="let link of project.links" [href]="link.url" target="_blank">{{ link.text }}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-header">
+      <span>04</span>
+      <h2>Contact</h2>
+    </div>
+
+    <p class="contact-copy">Let's build something remarkable together. I'm available for frontend work, automation projects, and product design collaborations.</p>
+    <div class="contact-actions">
+      <a class="button primary" href="mailto:{{ email }}">{{ email }}</a>
+      <a class="button secondary" href="https://www.linkedin.com/in/carlos-marruedo/" target="_blank">LinkedIn</a>
     </div>
   </section>
 </main>
